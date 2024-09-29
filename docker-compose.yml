@@ -12,7 +12,7 @@ services:
       AUTHENTIK_POSTGRESQL__PASSWORD: ${AUTHENTIK_POSTGRESQL__PASSWORD}
     volumes:
       - /opt/docker/authentik/media:/media
-      - /opt/docker/authentik/custom-templates:/templates
+      - /opt/docker/authentik/templates:/templates
     env_file:
       - .env
     ports:
