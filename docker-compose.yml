@@ -15,9 +15,12 @@ services:
       - /opt/docker/authentik/templates:/templates
     env_file:
       - .env
-    ports:
-      - "${COMPOSE_PORT_HTTP:-9000}:9000"
-      - "${COMPOSE_PORT_HTTPS:-9443}:9443"
+#    ports:
+#      - "${COMPOSE_PORT_HTTP:-9000}:9000"
+#      - "${COMPOSE_PORT_HTTPS:-9443}:9443"
+    expose:
+      - 9000
+      - 9443
     networks:
       - postgresql_default
       - redis_default
