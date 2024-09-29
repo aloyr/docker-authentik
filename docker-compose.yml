@@ -24,6 +24,7 @@ services:
       - 9443
     networks:
       - default
+      - nginxproxymanager_default
       - postgresql_default
       - redis_default
 
@@ -52,6 +53,7 @@ services:
       - /opt/docker/authentik/templates:/templates
     networks:
       - default
+      - nginxproxymanager_default
       - postgresql_default
       - redis_default
 
@@ -61,6 +63,8 @@ services:
 networks:
   default:
     driver: bridge
+  nginxproxymanager_default:
+    external: true
   postgresql_default:
     external: true
   redis_default:
